@@ -1,0 +1,319 @@
++OK 17454 octets
+Return-path: <nd3@cceeds.org>
+Received: from iitr.ac.in ([192.168.121.73])
+ by store.iitr.ac.in (Oracle Communications Messaging Server 7u5-28.21
+ (7.0.5.28.0) 64bit (built Apr  8 2013))
+ with SMTP id <0ODS005UKPJVY900@store.iitr.ac.in> for an9sh.ucs2014@iitr.ac.in;
+ Tue, 20 Sep 2016 14:41:55 +0530 (IST)
+Original-recipient: rfc822;an9sh.ucs2014@iitr.ac.in
+Received: from iitr.ac.in (unknown [127.0.0.1])	by IMSVA (Postfix)
+ with ESMTP id A92E21AE8C5	for <an9sh.ucs2014@iitr.ac.in>; Tue,
+ 20 Sep 2016 14:34:58 +0530 (IST)
+Received: from mail-vk0-f50.google.com (unknown [209.85.213.50])
+	by iitr.ac.in (Postfix) with ESMTP id 7C5141ADA12	for
+ <an9sh.ucs2014@iitr.ac.in>; Tue, 20 Sep 2016 14:34:57 +0530 (IST)
+Received: by mail-vk0-f50.google.com with SMTP id u196so16411968vkd.0 for
+ <an9sh.ucs2014@iitr.ac.in>; Tue, 20 Sep 2016 02:10:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cceeds-org.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=X9+6aLNTxU23nR9VW6IHieyh++rjBN5REQ/YpOE6TkQ=;
+ b=1cDX9TlffSJNhvH46sFsrdHCC1DLMS9Fpt/N8demMClDD4idhRre6Ob8EGIsVi+vps
+ Dzt66w7D9osGxZ8e8SEcvkcDobdmsi/jLhG/1iR2eYxQVtVZ9uyCpw70QiCccvt8VZIm
+ R+AqG7kLeb4bTQDsykWjVcjMomK282/DbPIp58avnhwHZcEqct9Ap4zyz5x97mXAGc/5
+ WEwuNIpJLdFgWCg69oBtorlT15t6UvhSIuBlUCtWFLbEeOwq1AHl5kRYhmP1LuP5pyJN
+ b25bi7usBAHWJpr2/p2CzH4yidi8mGuHzhmoI0cLc4V/IhkcZxTuo8Md615WCpINMJAX
+ nkgg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20130820;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=X9+6aLNTxU23nR9VW6IHieyh++rjBN5REQ/YpOE6TkQ=;
+ b=KKC4QNgguvZ/vWvr5uftTcLn4BpE+dpq2u+3pNzmYKN+7PmtI9hEvt2VI7hgcPEy9g
+ G6xbPpax5Eh90aGAPndauFNdW7xY6SzznlvTp10pXqRTwVwHejG4dFPolWpulLYGcLmA
+ 2G8SlefyfTgyfW8A1ZO6B6PhqnTWhp6JKEZ5dgvkVvYnftxY/60RS96cO7HR6my6AH42
+ u/LqYg2bqNOigf4tUIPHZYeqyBu1GbEX1jZzKcpSXBfBbypYeMAjQ8DdZ1rJkf5XFAEm
+ b/zDh0NqndKRMNfFRWUvrMisDesQ9BMgbby0rjyFGkikSOcl1gO/DfdeExWp2ZNuwnnV
+ PO+A==
+X-Gm-Message-State:
+ AE9vXwMIKleWCzbz1JAf7CUjrFbiB+yuOKHtRq1CeedHZas/yY6B7oJBcf2vVSi523tWt9HSSpFNKFHWYMR7YiE8PQ0dBXYbGOk6WzcCHIhMah2JPy7XpSvxGhmyADEoYM+9z8iSUHs9IjPlDRSJEWw=
+X-Received: by 10.31.2.200 with SMTP id 191mr3133166vkc.101.1474362625909; Tue,
+ 20 Sep 2016 02:10:25 -0700 (PDT)
+MIME-version: 1.0
+Received: by 10.176.66.166 with HTTP; Tue, 20 Sep 2016 02:10:25 -0700 (PDT)
+From: Anu Munna <nd3@cceeds.org>
+Date: Tue, 20 Sep 2016 14:40:25 +0530
+Message-id: <CA+Z-0__RR_Tj5r5Cc9gQh+KRcX4JPy2VoxsN+bpaUziAMqmOfA@mail.gmail.com>
+Subject:
+To: ascsp2016@yahoo.com
+Content-type: multipart/alternative; boundary=001a113da7e49693a9053ceccca5
+X-TM-AS-MML: No
+X-TM-AS-Product-Ver: IMSVA-8.2.0.1679-8.0.0.1202-22588.005
+X-TM-AS-Result: No--11.558-4.5-31-10
+X-imss-scan-details: No--11.558-4.5-31-10
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Version: IMSVA-8.2.0.1679-8.0.1202-22588.005
+X-TMASE-Result: 10--11.558300-5.000000
+X-TMASE-MatchedRID: SJj5BfutSBG4kBvSluvo/EKGB4JJ2ELXVm3LNN8y4zj/wyBytzM3CeOK
+	JfF5a3QalGFDOxxSAGW0XdFsGUlXTUMR/ZdMRWYG5DSMPEZQAkNxZkR+u3smBb7omc9ymlvpNXC
+	JzlE93cgGUmUBKg9hSbLY4JxtsE/kM4rRn+V+qUcASCpNzgtLhJozGrUiC1+/OGCgDN6Ebfa/xi
+	VRG8Gt8wVVTO/MJmA2dXIESSxAXRxHdhuYYkLbTImV1zb45ieGe11KVkH8YBEgvG6fxVaJzwoW9
+	dJZmjf2NAvsEThADSgBPle7roh0qGsNwtyxAr0+syNb+yeIRApj0mUvAvV2DWMPWYT9SRac1mhI
+	hvJ/JXzPM98CMQ3kxfg4uokt8BTdyTBgz6hl0deTEgTE0DYkgMTfSi2Auq7R2oLGTNKlb9fSXEc
+	hHk0QJIr6BPAA4BsXnFVXhIhBdtrTkpN96YPNqjTR2TFg0xG3/AZW18vjv1rimKcLRvsB1cCGbJ
+	bVFw0j1zjclFo3NLOPqsx6a+DaJUhrEQpQtQpnGNHzcOspxZz4bPjfm0hIQaUXswX/xrISZ03/C
+	LzIZFJ/v87kN0BM12hfrBWya6Nvk8QO0HW98wS4jAucHcCqnS2VljVYB9GNw7+XQ3Lk9nk/ATUo
+	bfbFOw3ef9CalPdqgDLqnrRlXrYfE8yM4pjsD4MbH85DUZXyHpftPIkU7YopDP27gsW4t/e+C6+
+	YSWD6p6wzX3X0UQaU1lP8J/+hKd1ai0xTPKXbcWmQjBXok1wSU2jNn06RRcbxQQV88KVcWSKBDp
+	T8WlfVik2wcVWkY47LO9RSslkKaAZk0sEcY14=
+
+--001a113da7e49693a9053ceccca5
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+*Dear Sir/Madam,*
+
+ASCTET-2016 Conference is being organized by *St. Peter's Engineering
+College, Hyderabad, Telangana, India. *The aim of the conference is to
+provide the platform for Students, Engineers, Researchers and Scientists to
+share the knowledge and ideas in the recent trends in the field of
+Engineering, Science and Technology.
+
+
+
+*Important dates:*
+
+*Last date of paper submission: 20th September (Today is the Last date) *
+
+*Dates of Conference: 25th to 27th Oct 2016.*
+
+
+
+*Highlights:*
+
+=C2=B7         *Papers shortlisted by the conference technical committee fo=
+r
+presentations will be reviewed by the IET for publication. Those that are
+accepted will be hosted on the IET Digital Library and indexed by IET
+Inspec.*
+
+=C2=B7         *Papers will be also submitted to the IEEE for review and
+possible publication on the IEEE Xplore Online Library (subject to
+acceptance).*
+
+=C2=B7         *For authors (outside India) who are unable to attend the
+conference can also present the paper through online video presentation.*
+
+=C2=B7         *Papers are welcome from all the fields of Engineering, Scie=
+nce
+and technology*
+
+
+
+*For details*: http://bit.do/cAGsf
+
+--=20
+
+------------------------------
+*Disclaimer: *This email and any file(s) transmitted with it are=20
+confidential and intended solely for the use of the individual or entity to=
+=20
+whom they are addressed. This message contains confidential information and=
+=20
+is intended only for the individual named. If you are not the named=20
+addressee you should not disseminate, distribute or copy this e-mail.=20
+Please notify the sender immediately by e-mail if you have received this=20
+e-mail by mistake and delete this e-mail from your system. If you are not=
+=20
+the intended recipient you are notified that disclosing, copying,=20
+distributing or taking any action in reliance on the contents of this=20
+information is strictly prohibited.
+
+--001a113da7e49693a9053ceccca5
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001p=
+t 40.5pt;text-align:justify;background-image:initial;background-position:in=
+itial;background-size:initial;background-repeat:initial;background-origin:i=
+nitial;background-clip:initial"><b><i><span lang=3D"EN-IN" style=3D"font-si=
+ze:12pt;line-height:115%;font-family:aparajita,sans-serif;color:rgb(192,0,0=
+)">Dear
+Sir/Madam,<span></span></span></i></b></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;text-indent:28.35pt;background-image:initial;background-position=
+:initial;background-size:initial;background-repeat:initial;background-origi=
+n:initial;background-clip:initial"><span lang=3D"EN-IN" style=3D"font-size:=
+12pt;line-height:115%;font-family:aparajita,sans-serif">ASCTET-2016
+Conference is being organized by <b><i><span style=3D"color:rgb(192,0,0)">S=
+t. Peter&#39;s
+Engineering College, Hyderabad, Telangana, India</span></i><span style=3D"c=
+olor:rgb(192,0,0)">. </span></b>The aim of the conference is to provide the
+platform for Students, Engineers, Researchers and Scientists to share the
+knowledge and ideas in the recent trends in the field of Engineering, Scien=
+ce
+and Technology.<span></span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;text-indent:28.35pt;background-image:initial;background-position=
+:initial;background-size:initial;background-repeat:initial;background-origi=
+n:initial;background-clip:initial"><span lang=3D"EN-IN" style=3D"font-size:=
+12pt;line-height:115%;font-family:aparajita,sans-serif"><span>=C2=A0</span>=
+</span></p>
+
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin:0in 23.85pt 0.0001p=
+t 40.5pt;text-align:center;line-height:normal;background-image:initial;back=
+ground-position:initial;background-size:initial;background-repeat:initial;b=
+ackground-origin:initial;background-clip:initial"><b><u><span lang=3D"EN-IN=
+" style=3D"font-size:12pt;font-family:aparajita,sans-serif;color:rgb(192,0,=
+0);background-image:initial;background-position:initial;background-size:ini=
+tial;background-repeat:initial;background-origin:initial;background-clip:in=
+itial">Important dates:<span></span></span></u></b></p>
+
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin:0in 23.85pt 0.0001p=
+t 40.5pt;text-align:center;line-height:normal;background-image:initial;back=
+ground-position:initial;background-size:initial;background-repeat:initial;b=
+ackground-origin:initial;background-clip:initial"><b><span lang=3D"EN-IN" s=
+tyle=3D"font-size:12pt;font-family:aparajita,sans-serif;background-image:in=
+itial;background-position:initial;background-size:initial;background-repeat=
+:initial;background-origin:initial;background-clip:initial">Last date of pa=
+per submission: 20<sup>th</sup> September
+(Today is the Last date) <span></span></span></b></p>
+
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin:0in 23.85pt 0.0001p=
+t 40.5pt;text-align:center;line-height:normal;background-image:initial;back=
+ground-position:initial;background-size:initial;background-repeat:initial;b=
+ackground-origin:initial;background-clip:initial"><b><span lang=3D"EN-IN" s=
+tyle=3D"font-size:12pt;font-family:aparajita,sans-serif;background-image:in=
+itial;background-position:initial;background-size:initial;background-repeat=
+:initial;background-origin:initial;background-clip:initial">Dates of Confer=
+ence: 25<sup>th</sup> to 27<sup>th</sup> Oct
+2016.<span></span></span></b></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;line-height:normal;background-image:initial;background-position:=
+initial;background-size:initial;background-repeat:initial;background-origin=
+:initial;background-clip:initial"><b><span lang=3D"EN-IN" style=3D"font-siz=
+e:12pt;font-family:aparajita,sans-serif;background-image:initial;background=
+-position:initial;background-size:initial;background-repeat:initial;backgro=
+und-origin:initial;background-clip:initial"><span>=C2=A0</span></span></b><=
+/p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;line-height:normal;background-image:initial;background-position:=
+initial;background-size:initial;background-repeat:initial;background-origin=
+:initial;background-clip:initial"><b><u><span lang=3D"EN-IN" style=3D"font-=
+size:12pt;font-family:aparajita,sans-serif;color:rgb(192,0,0);background-im=
+age:initial;background-position:initial;background-size:initial;background-=
+repeat:initial;background-origin:initial;background-clip:initial">Highlight=
+s:<span></span></span></u></b></p>
+
+<p class=3D"gmail-MsoListParagraphCxSpFirst" style=3D"margin:0in 23.85pt 0.=
+0001pt 40.5pt;text-align:justify;line-height:normal;background-image:initia=
+l;background-position:initial;background-size:initial;background-repeat:ini=
+tial;background-origin:initial;background-clip:initial"><span lang=3D"EN-IN=
+" style=3D"font-size:12pt;font-family:symbol">=C2=B7<span style=3D"font-var=
+iant-numeric:normal;font-stretch:normal;font-size:7pt;line-height:normal;fo=
+nt-family:&quot;times new roman&quot;">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0
+</span></span><b><i><span lang=3D"EN-IN" style=3D"font-size:12pt;font-famil=
+y:aparajita,sans-serif;background-image:initial;background-position:initial=
+;background-size:initial;background-repeat:initial;background-origin:initia=
+l;background-clip:initial">Papers shortlisted by
+the conference technical committee for presentations will be reviewed by th=
+e
+IET for publication. Those that are accepted will be hosted on the IET Digi=
+tal
+Library and indexed by IET Inspec.<span></span></span></i></b></p>
+
+<p class=3D"gmail-MsoListParagraphCxSpMiddle" style=3D"margin:0in 23.85pt 0=
+..0001pt 40.5pt;text-align:justify;line-height:normal;background-image:initi=
+al;background-position:initial;background-size:initial;background-repeat:in=
+itial;background-origin:initial;background-clip:initial"><span lang=3D"EN-I=
+N" style=3D"font-size:12pt;font-family:symbol">=C2=B7<span style=3D"font-va=
+riant-numeric:normal;font-stretch:normal;font-size:7pt;line-height:normal;f=
+ont-family:&quot;times new roman&quot;">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0
+</span></span><b><i><span lang=3D"EN-IN" style=3D"font-size:12pt;font-famil=
+y:aparajita,sans-serif;background-image:initial;background-position:initial=
+;background-size:initial;background-repeat:initial;background-origin:initia=
+l;background-clip:initial">Papers will be also
+submitted to the IEEE for review and possible publication on the IEEE Xplor=
+e
+Online Library (subject to acceptance).<span></span></span></i></b></p>
+
+<p class=3D"gmail-MsoListParagraphCxSpMiddle" style=3D"margin:0in 23.85pt 0=
+..0001pt 40.5pt;text-align:justify;line-height:normal;background-image:initi=
+al;background-position:initial;background-size:initial;background-repeat:in=
+itial;background-origin:initial;background-clip:initial"><span lang=3D"EN-I=
+N" style=3D"font-size:12pt;font-family:symbol">=C2=B7<span style=3D"font-va=
+riant-numeric:normal;font-stretch:normal;font-size:7pt;line-height:normal;f=
+ont-family:&quot;times new roman&quot;">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0
+</span></span><b><i><span lang=3D"EN-IN" style=3D"font-size:12pt;font-famil=
+y:aparajita,sans-serif;background-image:initial;background-position:initial=
+;background-size:initial;background-repeat:initial;background-origin:initia=
+l;background-clip:initial">For authors (outside
+India) who are unable to attend the conference can also present the paper
+through online video presentation.<span></span></span></i></b></p>
+
+<p class=3D"gmail-MsoListParagraphCxSpLast" style=3D"margin:0in 23.85pt 0.0=
+001pt 40.5pt;text-align:justify;line-height:normal;background-image:initial=
+;background-position:initial;background-size:initial;background-repeat:init=
+ial;background-origin:initial;background-clip:initial"><span lang=3D"EN-IN"=
+ style=3D"font-size:12pt;font-family:symbol">=C2=B7<span style=3D"font-vari=
+ant-numeric:normal;font-stretch:normal;font-size:7pt;line-height:normal;fon=
+t-family:&quot;times new roman&quot;">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0
+</span></span><b><i><span lang=3D"EN-IN" style=3D"font-size:12pt;font-famil=
+y:aparajita,sans-serif;background-image:initial;background-position:initial=
+;background-size:initial;background-repeat:initial;background-origin:initia=
+l;background-clip:initial">Papers are welcome from
+all the fields of Engineering, Science and technology<span></span></span></=
+i></b></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;line-height:normal;background-image:initial;background-position:=
+initial;background-size:initial;background-repeat:initial;background-origin=
+:initial;background-clip:initial"><i><span lang=3D"EN-IN" style=3D"font-siz=
+e:14pt;font-family:aparajita,sans-serif;color:rgb(192,0,0);background-image=
+:initial;background-position:initial;background-size:initial;background-rep=
+eat:initial;background-origin:initial;background-clip:initial"><span>=C2=A0=
+</span></span></i></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0in 23.85pt 0.0001pt 40.5pt;text-ali=
+gn:justify;line-height:normal;background-image:initial;background-position:=
+initial;background-size:initial;background-repeat:initial;background-origin=
+:initial;background-clip:initial"><i><span lang=3D"EN-IN" style=3D"font-siz=
+e:14pt;font-family:aparajita,sans-serif;color:rgb(192,0,0);background-image=
+:initial;background-position:initial;background-size:initial;background-rep=
+eat:initial;background-origin:initial;background-clip:initial">For details<=
+/span></i><span lang=3D"EN-IN" style=3D"font-size:12pt;font-family:aparajit=
+a,sans-serif;background-image:initial;background-position:initial;backgroun=
+d-size:initial;background-repeat:initial;background-origin:initial;backgrou=
+nd-clip:initial">:
+<a href=3D"http://bit.do/cAGsf">http://bit.do/cAGsf</a> </span><i><span lan=
+g=3D"EN-IN" style=3D"font-size:12pt;font-family:aparajita,sans-serif"><span=
+></span></span></i></p></div>
+
+<br>
+<hr><b><span lang=3D"EN-IN" style=3D"font-size:12.0pt;line-height:115%;font=
+-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:#222222;backgro=
+und:white">Disclaimer:<span> </span></span></b><span lang=3D"EN-IN" style=
+=3D"font-size:12.0pt;line-height:115%;font-family:&quot;Times New Roman&quo=
+t;,&quot;serif&quot;;color:#222222;background:white">This email and any fil=
+e(s) transmitted with it are confidential and
+intended solely for the use of the individual or entity to whom they are
+addressed. This message contains confidential information and is intended o=
+nly
+for the individual named. If you are not the named addressee you should not
+disseminate, distribute or copy this e-mail. Please notify the sender
+immediately by e-mail if you have received this e-mail by mistake and delet=
+e
+this e-mail from your system. If you are not the intended recipient you are
+notified that disclosing, copying, distributing or taking any action in
+reliance on the contents of this information is strictly prohibited.</span>
+--001a113da7e49693a9053ceccca5--
+
+.
