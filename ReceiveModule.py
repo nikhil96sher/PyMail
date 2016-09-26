@@ -44,9 +44,9 @@ def send_m(m, s):
     s.send((m + '\r\n').encode('utf-8'))
 
 def send_and_receive(mes,s):
-    logging.debug("\nC: "+mes)
+    # logging.debug("\nC: "+mes)
     s.send((mes + '\r\n').encode('utf-8'))
-    s.recv(2048)
+    print s.recv(2048)
 
 def send_and_print(mes, s):
     # send_m(mes, s)
@@ -105,6 +105,7 @@ def RetrieveList(pop3_h, pop3_p, user_id, password, log_level):
 
     for m in auto:
         send_and_receive(m, sock)
+    print sock
 
     send_m('list', sock)
     mail_list = ''
@@ -114,6 +115,7 @@ def RetrieveList(pop3_h, pop3_p, user_id, password, log_level):
         mail_list += m
         m = sock.recv(2048)
     mail_list += m.decode('utf-8')
+    print mail_list
     messages = mail_list.split('\r\n')
     messages = messages[1: len(messages)]
 
@@ -128,7 +130,7 @@ def RetrieveList(pop3_h, pop3_p, user_id, password, log_level):
             ans = sock.recv(2048)
             while not ans.endswith(b'\r\n.\r\n'):
                 ans += sock.recv(2048)
-
+            print ans
             subj, addr = get_result(ans)
             subj_list.append(subj)
             addr_list.append(addr)
@@ -172,7 +174,7 @@ def RetrieveEmail(pop3_h, pop3_p, user_id, password, index, log_level):
     else:
         body = b.get_payload()
 
-    f =  open("t.txt","w")
+    f =  open("message_retrieved.txt","w")
     f.write(mes1)
     return body
 
@@ -225,7 +227,7 @@ def main():
     #     mes1 += m
     #     m = sock.recv(4096)
     # mes1 += m.decode('utf-8')
-    # f =  open("t.txt","w")
+    # f =  open("message_retrieved.txt","w")
     # f.write(mes1)
     # print mes1
 
