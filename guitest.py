@@ -1,9 +1,11 @@
 from Tkinter import *
-from ReceiveModule import *
+# from ReceiveModule import *
+from receive_module import *
 import tkMessageBox
 from sender import Mail
 import logging
 from conf import *
+import email
 class Compose:
 
 	def __init__(self, master, smtp_h,smtp_p,user_id,password):
@@ -80,13 +82,13 @@ class App:
 		# mail.send_message("TEST Message", fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.message.get())
 
 	def retrieve_list(self, lower_limit = 0, upper_limit = 10):
+		pop3_obj = pop3lib()
 		addr_list, subj_list = RetrieveList(self.pop3_h.get(), self.pop3_p.get(), self.user_id.get(), self.password.get(), logging.DEBUG)
 		self.lb.delete(0,self.lb.size()-1)
-		for  i,a in enumerate(addr_list):
+		for i,a in enumerate(addr_list):
 			addri =  addr_list[i].split(' ')[-1][:-1]
 			subji = " ".join( subj_list[i].split(' ')[1:] )
 			self.lb.insert(i+1,addri+" : "+subji)
-
 		self.lb.activate(1)
 
 	def retrieve(self, event):
@@ -95,7 +97,20 @@ class App:
 		index = int(w.curselection()[0])
 		value = w.get(index)
 		body = RetrieveEmail(self.pop3_h.get(), self.pop3_p.get(), self.user_id.get(), self.password.get(), index+1, logging.DEBUG)
-		print body
+		body = '\n'.join(body.split('\n')[1:])
+		# print body
+		msg = body
+		b = email.message_from_string(msg)
+		body = ""
+		if b.is_multipart():
+		    for payload in b.get_payload():
+		        body = body + payload.get_payload()
+		else:
+		    body = b.get_payload()
+		body = body.replace("\r","")
+		# body = '\n'.join(body.split('\n')[:-1])
+		body = body[:-2]
+		body = body[:body.rfind("\r\n.")]
 		self.text.insert(INSERT, body)
 
 if __name__ == "__main__":

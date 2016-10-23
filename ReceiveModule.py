@@ -13,18 +13,16 @@ import email
 # username = --- 
 # password = --- 
 
-port = 110
+port = host_port
 login = username    
 password = passw
 host = host_addr
 CRLF = '\r\n'
 
-
 def print_help():
     path = sys.argv[0].split("/")
     name = path[len(path) - 1]
     print("{0} host port".format(name))
-
 
 def get_args():
     global port, host, login, password
