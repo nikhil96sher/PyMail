@@ -122,11 +122,11 @@ class pop3lib:
 			self.password_valid = False
 
 	def get_message_list(self):
-		self.message_count = self.get_message_count()
+		self.message_count = min(self.get_message_count(),MESSAGE_LIMIT)
 		addr_list = []
 		subj_list = []
 
-		for message_number in range(1,self.message_count+1):
+		for message_number in range(1,min(self.message_count,MESSAGE_LIMIT) + 1):
 			self.send_message('top {0} 0'.format(message_number))
 			# response = self.receive_till_term(TERMINATOR)
 

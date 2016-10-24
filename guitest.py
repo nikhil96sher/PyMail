@@ -54,8 +54,8 @@ class App:
 
 	def __init__(self, master):
 		self.master = master
-		master.minsize(width=800, height=500)
-		master.maxsize(width=800, height=500)
+		master.minsize(width=1000, height=500)
+		master.maxsize(width=1000, height=500)
 		self.smtp_h 	= StringVar(value=HOST_ADDR)
 		self.smtp_p 	= IntVar(value=POP3_PORT)
 		self.pop3_h 	= StringVar(value=HOST_ADDR)
@@ -81,10 +81,10 @@ class App:
 		self.lb = Listbox(master, name='lb', height = 20, width = 70)
 		self.lb.bind('<<ListboxSelect>>', self.retrieve)
 		self.lb.grid(row = 6, column = 0, rowspan = 10, columnspan = 2)
-		self.text = Text(master, height = 30, width = 40, padx = 5, pady=5)
-		self.text.grid(row=0, column=2, columnspan=3, rowspan=15)
+		self.text = Text(master, height = 30, width = 60, padx = 5, pady=5)
+		self.text.grid(row=0, column=2, columnspan=5, rowspan=15)
 		self.retrieve_button = Button(master, text="Open in Browser", command=self.open_in_browser)
-		self.retrieve_button.grid(row=15,column=2,columnspan=3)
+		self.retrieve_button.grid(row=15,column=2,columnspan=5)
 
 		self.retrieve_button = Button(master, text="LOGIN", command=self.login)
 		self.retrieve_button.grid(row=16,column=0)
