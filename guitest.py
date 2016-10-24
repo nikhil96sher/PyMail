@@ -2,11 +2,16 @@ from Tkinter import *
 from receive_module import *
 import tkMessageBox
 from sender import Mail
+from sender import Message
 import logging
 from conf import *
 import email
 import os
-
+from socket import *
+import base64
+import time
+import ssl
+from email.base64mime import encode as encode_base64
 class Compose:
 
 	def __init__(self, master, smtp_h,smtp_p,user_id,password):
@@ -33,9 +38,109 @@ class Compose:
 		print "Logging to " + self.user_id
 		print "Sending from" + self.sender_id.get()
 		print "Sending To" + self.receiver_id.get()
-		mail = Mail("192.168.180.11", port=587, username=self.user_id, password=self.password,
+		'''mail = Mail("192.168.180.11", port=587, username=self.user_id, password=self.password,
 			use_tls=False, use_ssl=False, debug_level=1)
-		mail.send_message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))
+		mail.send_message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))'''
+		msg = Message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))
+
+		print msg 
+
+		msg = "Subject: " + self.subject.get() +"\n\n\r\n" + self.text.get("1.0",'end-1c')
+		endmsg = "\r\n.\r\n"
+
+		# Choose a mail server (e.g. Google mail server) and call it mailserver
+		mailserver = "192.168.180.11"
+		port = 587
+
+		# Create socket called clientSocket and establish a TCP connection with mailserver
+		clientSocket = socket(AF_INET, SOCK_STREAM)
+		#ssl_clientSocket = ssl.wrap_socket(clientSocket) 
+		#ssl_clientSocket.connect((mailserver, port))
+		clientSocket.connect((mailserver,port))
+		ssl_clientSocket = clientSocket
+
+
+
+		recv = ssl_clientSocket.recv(1024)
+		print
+		print recv+"reci1997"
+
+		# If the first three numbers of what we receive from the SMTP server are not
+		# '220', we have a problem
+		if recv[:3] != '220':
+			print '220 reply not received from server.'
+
+		stri = '%s %s%s' % ("AUTH", "PLAIN" + " " + encode_base64("\0%s\0%s" % (self.user_id, self.password), eol=""), CRLF)
+		print stri
+		ssl_clientSocket.send(stri)
+		recv = ssl_clientSocket.recv(1024)
+		print
+		print recv+"reci1997"
+		
+		heloCommand = 'HELO Alice\r\n'
+		ssl_clientSocket.send(heloCommand)
+		recv1 = ssl_clientSocket.recv(1024)
+		print recv1
+
+		# If the first three numbers of the response from the server are not
+		# '250', we have a problem
+		if recv1[:3] != '250':
+		    print '250 reply not received from server.'
+
+		# Send MAIL FROM command and print server response.
+		mailFromCommand = 'MAIL From: '+self.sender_id.get()+'\r\n'
+		ssl_clientSocket.send(mailFromCommand)
+		recv2 = ssl_clientSocket.recv(1024)
+		print recv2
+
+		# If the first three numbers of the response from the server are not
+		# '250', we have a problem
+		if recv2[:3] != '250':
+		    print '250 reply not received from server.'
+
+		# Send RCPT TO command and print server response.
+		rcptToCommand = 'RCPT To: '+self.receiver_id.get()+'\r\n'
+		ssl_clientSocket.send(rcptToCommand)
+		recv3 = ssl_clientSocket.recv(1024)
+		print recv3
+
+		# If the first three numbers of the response from the server are not
+		# '250', we have a problem
+		if recv3[:3] != '250':
+		    print '250 reply not received from server.'
+
+		# Send DATA command and print server response.
+		dataCommand = 'DATA\r\n'
+		ssl_clientSocket.send(dataCommand)
+		recv4 = ssl_clientSocket.recv(1024)
+		print recv4
+
+		# If the first three numbers of the response from the server are not
+		# '250', we have a problem
+		if recv4[:3] != '250':
+		    print '250 reply not received from server.'
+
+		# Send message data.
+		subject = self.subject.get()+" \r\n\r\n" 
+		#ssl_clientSocket.send(subject)
+		date = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime())
+		date = date + "\r\n\r\n"
+		#ssl_clientSocket.send(date)
+		ssl_clientSocket.send(msg)
+
+		# Message ends with a single period.
+		ssl_clientSocket.send(endmsg)
+
+		# Send QUIT command and get server response.
+		quitCommand = 'QUIT\r\n'
+		ssl_clientSocket.send(quitCommand)
+		recv5 = ssl_clientSocket.recv(1024)
+		print recv5
+
+		# If the first three numbers of the response from the server are not
+		# '250', we have a problem
+		if recv5[:3] != '221':
+		    print '221 reply not received from server.'
 
 class App:
 
@@ -47,7 +152,7 @@ class App:
 		self.smtp_p 	= IntVar(value=587)
 		self.pop3_h 	= StringVar(value="192.168.180.11")
 		self.pop3_p 	= IntVar(value=110)
-		self.user_id 	= StringVar(value="an9sh.ucs2014@iitr.ac.in")
+		self.user_id	= StringVar(value=USERNAME)
 		self.password 	= StringVar(value=passw)
 		self.info 		= StringVar()
 		Label(master, text="SMTP Host").grid(row=0)
