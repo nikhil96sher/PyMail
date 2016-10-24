@@ -11,7 +11,11 @@ git clone https://github.com/anshulshah96/PyMail.git
 ```python 
 username = "your username"
 passw = "your password"
+USERNAME = "your username"
+PASSWORD = "your password"
 host_addr = "192.168.180.11" # IITR SMTP AND POP3 ADDRESSS
+POP3_PORT = 110
+SMTP_PORT = 587
 ```
 - Start the GUI User Agent:
 ```shell

@@ -1,5 +1,5 @@
 conf.py
 email_sender.py
-message_retrieved.txt
+message_retrieved.html
 *.pyc
 screenshots/
