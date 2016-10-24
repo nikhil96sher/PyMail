@@ -14,7 +14,7 @@ import email
 # password = --- 
 
 port = 110
-login = username    
+login = USERNAME    
 password = passw
 host = host_addr
 CRLF = '\r\n'

@@ -39,11 +39,11 @@ class Compose:
 		'''mail = Mail("192.168.180.11", port=587, username=self.user_id, password=self.password,
 			use_tls=False, use_ssl=False, debug_level=1)
 		mail.send_message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))'''
-		#msg = Message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))
+		msg = Message(self.subject.get(), fromaddr=self.sender_id.get(), to=self.receiver_id.get(), body=self.text.get("1.0",'end-1c'))
 
-		#print msg 
+		print msg 
 
-		msg = "\r\n " + self.text.get("1.0",'end-1c')
+		msg = "Subject: " + self.subject.get() +"\n\n\r\n" + self.text.get("1.0",'end-1c')
 		endmsg = "\r\n.\r\n"
 
 		# Choose a mail server (e.g. Google mail server) and call it mailserver
@@ -150,7 +150,7 @@ class App:
 		self.smtp_p = IntVar(value=587)
 		self.pop3_h = StringVar(value="192.168.180.11")
 		self.pop3_p = IntVar(value=110)
-		self.user_id = StringVar(value="an9sh.ucs2014@iitr.ac.in")
+		self.user_id = StringVar(value=USERNAME)
 		self.password = StringVar(value=passw)
 		Label(master, text="SMTP Host").grid(row=0)
 		Label(master, text="SMTP Port").grid(row=1)
