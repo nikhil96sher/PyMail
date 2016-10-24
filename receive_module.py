@@ -7,16 +7,13 @@ import quopri
 from conf import *
 import logging
 import email
+
 # from email.parser import Parser
 
 # in conf.py put
 # username = --- 
 # password = --- 
 
-port = 110
-login = username    
-password = passw
-host = host_addr
 CRLF = '\r\n'
 TERMINATOR = CRLF + '.' + CRLF
 
@@ -164,7 +161,7 @@ class pop3lib:
 if __name__ == "__main__":
 	reload(sys)  
 	sys.setdefaultencoding('utf8')
-	pop_obj = pop3lib(host,port,username,password)
+	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
 	# print pop_obj.get_message_list()
 	# print pop_obj.get_email_body(14)
-	print "DONE"
+	# print "DONE"

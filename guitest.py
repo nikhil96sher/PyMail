@@ -148,12 +148,12 @@ class App:
 		self.master = master
 		master.minsize(width=800, height=500)
 		master.maxsize(width=800, height=500)
-		self.smtp_h 	= StringVar(value="192.168.180.11")
-		self.smtp_p 	= IntVar(value=587)
-		self.pop3_h 	= StringVar(value="192.168.180.11")
-		self.pop3_p 	= IntVar(value=110)
+		self.smtp_h 	= StringVar(value=HOST_ADDR)
+		self.smtp_p 	= IntVar(value=POP3_PORT)
+		self.pop3_h 	= StringVar(value=HOST_ADDR)
+		self.pop3_p 	= IntVar(value=POP3_PORT)
 		self.user_id	= StringVar(value=USERNAME)
-		self.password 	= StringVar(value=passw)
+		self.password 	= StringVar(value=PASSWORD)
 		self.info 		= StringVar()
 		Label(master, text="SMTP Host").grid(row=0)
 		Label(master, text="SMTP Port").grid(row=1)
@@ -225,7 +225,7 @@ class App:
 	def retrieve(self, event):
 		self.text.delete("1.0",END)
 		w = event.widget
-		index = int(w.curselection()[0])
+		index = int(w.curselection()[0])+1
 		value = w.get(index)
 		body = self.pop_obj.get_email_body(index)
 		self.text.insert(INSERT, body)
