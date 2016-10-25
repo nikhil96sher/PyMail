@@ -57,7 +57,7 @@ class App:
 		master.minsize(width=1000, height=500)
 		master.maxsize(width=1000, height=500)
 		self.smtp_h 	= StringVar(value=HOST_ADDR)
-		self.smtp_p 	= IntVar(value=POP3_PORT)
+		self.smtp_p 	= IntVar(value=SMTP_PORT)
 		self.pop3_h 	= StringVar(value=HOST_ADDR)
 		self.pop3_p 	= IntVar(value=POP3_PORT)
 		self.user_id	= StringVar(value=USERNAME)

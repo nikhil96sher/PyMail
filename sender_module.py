@@ -91,7 +91,7 @@ def send_email(SMTP_HOST, SMTP_PORT, USERNAME, PASSWORD, subject, fromaddr, toad
 if __name__ == "__main__":
 	reload(sys)  
 	sys.setdefaultencoding('utf8')
-	# fromaddr = "admin"+"@iitr.ac.in"
-	# toaddr = "anshulshah96"+"@gmail.com"
-	toaddr = fromaddr = USERNAME
+	fromaddr = "admin"+"@iitr.ac.in"
+	toaddr = "nikhilsheoran96"+"@gmail.com"
+	# toaddr = fromaddr = USERNAME
 	send_email(HOST_ADDR,SMTP_PORT,USERNAME,PASSWORD,"test",fromaddr,toaddr,"TEST body")
