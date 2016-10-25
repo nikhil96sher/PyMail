@@ -30,7 +30,7 @@ def send_and_receiveline(mes, sock):
 	sock.send(mes)
 	line = sock.recv(1024)
 	logging.debug("\nS: " + line)
-	return line	
+	return line
 
 # Sends a line over the socket
 def send_line(mes,sock):
@@ -57,9 +57,9 @@ def send_email(SMTP_HOST, SMTP_PORT, USERNAME, PASSWORD, subject, fromaddr, toad
 		print '220 reply not received from server.'
 
 	stri = '%s %s\r\n' % ("AUTH", "PLAIN" + " " + encode_base64("\0%s\0%s" % (USERNAME, PASSWORD), eol=""))
-	recv = send_and_receiveline(stri, sock) 
-		
-	heloCommand = 'HELO Alice\r\n'
+	recv = send_and_receiveline(stri, sock)
+
+	heloCommand = 'HELO\r\n'
 	recv1 = send_and_receiveline(heloCommand,sock)
 	# If the first three numbers of the response from the server are not '250', we have a problem
 	if recv1[:3] != '250':
@@ -87,12 +87,6 @@ def send_email(SMTP_HOST, SMTP_PORT, USERNAME, PASSWORD, subject, fromaddr, toad
 	# If the first three numbers of the response from the server are not '250', we have a problem
 	if recv4[:3] != '354':
 		print '354 reply not received from server.'
-
-	# Send message data.
-	# data = subject + "\r\n" 
-	# date = "date: "time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime())
-	# data = data + date + "\r\n\r\n"
-	# data = data + body + endmsg
 
 	data = "Subject: " + subject +"\r\n\r\n" + body + endmsg
 	# Final Message send
@@ -123,8 +117,8 @@ def send_raw_email(SMTP_HOST, SMTP_PORT, USERNAME, PASSWORD, fromaddr, toaddr, b
 		print '220 reply not received from server.'
 
 	stri = '%s %s\r\n' % ("AUTH", "PLAIN" + " " + encode_base64("\0%s\0%s" % (USERNAME, PASSWORD), eol=""))
-	recv = send_and_receiveline(stri, sock) 
-		
+	recv = send_and_receiveline(stri, sock)
+
 	heloCommand = 'HELO Alice\r\n'
 	recv1 = send_and_receiveline(heloCommand,sock)
 	# If the first three numbers of the response from the server are not '250', we have a problem
@@ -169,27 +163,27 @@ def send_raw_email(SMTP_HOST, SMTP_PORT, USERNAME, PASSWORD, fromaddr, toaddr, b
 		print '221 reply not received from server.'
 
 if __name__ == "__main__":
-	reload(sys)  
+	reload(sys)
 	sys.setdefaultencoding('utf8')
 	# fromaddr = "admin"+"@iitr.ac.in"
 	# toaddr = "nikhilsheoran96"+"@gmail.com"
-	# toaddr = fromaddr = USERNAME 
+	# toaddr = fromaddr = USERNAME
 	# toaddr = toaddr + ',' + 'prash.ucs2014@iitr.ac.in'
 	# send_email(HOST_ADDR,SMTP_PORT,USERNAME,PASSWORD,"test",fromaddr,toaddr,"TEST body")
 
 	fromaddr = USERNAME
 	toaddr = USERNAME
-	 
+
 	msg = MIMEMultipart()
-	 
+
 	msg['From'] = fromaddr
 	msg['To'] = toaddr
 	msg['Subject'] = "SUBJECT OF THE EMAIL"
-	 
+
 	body = "TEXT YOU WANT TO SEND"
-	 
+
 	msg.attach(MIMEText(body, 'plain'))
-	 
+
 	filename = "README.md"
 	attachment = open("README.md", "rb")
 	part = MIMEBase('application', 'octet-stream')
@@ -199,8 +193,8 @@ if __name__ == "__main__":
 	msg.attach(part)
 
 	print msg.as_string()
-	send_raw_email(HOST_ADDR,SMTP_PORT,USERNAME,PASSWORD,"",fromaddr,toaddr,msg.as_string()[:-1],logging.DEBUG)	
-	
+	send_raw_email(HOST_ADDR,SMTP_PORT,USERNAME,PASSWORD,"",fromaddr,toaddr,msg.as_string()[:-1],logging.DEBUG)
+
 	# smtp = smtplib.SMTP(HOST_ADDR, SMTP_PORT)
 	# smtp.login(USERNAME,PASSWORD)
 	# smtp.sendmail(fromaddr, toaddr, msg.as_string())

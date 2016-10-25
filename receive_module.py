@@ -11,8 +11,8 @@ import email
 # from email.parser import Parser
 
 # in conf.py put
-# username = --- 
-# password = --- 
+# username = ---
+# password = ---
 
 CRLF = '\r\n'
 TERMINATOR = CRLF + '.' + CRLF
@@ -45,7 +45,7 @@ class pop3lib:
 	def send_message(self,m):
 		logging.debug("\nC: "+m)
 		self.sock.send((m + '\r\n').encode('utf-8'))
-	
+
 	# sends a message m without logging
 	def send_password(self,m):
 		logging.debug("\nC: *********")
@@ -64,8 +64,8 @@ class pop3lib:
 		line = self.sock.recv(2048)
 		logging.debug("\nS: " + line)
 		return line
-	
-	# Receives until terminated 
+
+	# Receives until terminated
 	def receive_till_term(self, terminator):
 		response = self.sock.recv(2048)
 		while not response.endswith(TERMINATOR) and not response.endswith('.\r\n') and not response.endswith('.\r\n\r\n'):
@@ -74,7 +74,7 @@ class pop3lib:
 			print new_response
 		return response
 
-	# returns the total number of messages 
+	# returns the total number of messages
 	def get_message_count(self):
 		self.send_message("list")
 		mes = self.receive_till_term(TERMINATOR)
@@ -175,12 +175,13 @@ class pop3lib:
 		body = body[:-2]
 		f =  open("message_retrieved.html","w")
 		f.write(body)
+		f.close()
 		return body
 
 if __name__ == "__main__":
-	reload(sys)  
+	reload(sys)
 	sys.setdefaultencoding('utf8')
 	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
-	print pop_obj.get_message_list(1,1)
+	# print pop_obj.get_message_list(1,1)
 	# print pop_obj.get_email_body(14)
 	# print "DONE"
