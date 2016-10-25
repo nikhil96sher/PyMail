@@ -14,6 +14,7 @@ PASSWORD = "your password"
 HOST_ADDR = "192.168.180.11" # IITR SMTP AND POP3 ADDRESSS
 POP3_PORT = 110
 SMTP_PORT = 587
+MESSAGE_LIMIT = 20
 ```
 - Start the GUI User Agent:
 ```shell

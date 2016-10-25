@@ -121,7 +121,7 @@ class App:
 		if not hasattr(self, 'pop_obj'):
 			self.info.set("Please Login First")
 			return 
-		addr_list, subj_list = self.pop_obj.get_message_list()
+		addr_list, subj_list, date_list = self.pop_obj.get_message_list(lower_limit,upper_limit)
 		self.lb.delete(0,self.lb.size()-1)
 		for i,a in enumerate(addr_list):
 			addri =  addr_list[i].split(' ')[-1][:-1]
@@ -133,7 +133,7 @@ class App:
 	def retrieve(self, event):
 		self.text.delete("1.0",END)
 		w = event.widget
-		index = int(w.curselection()[0])+1
+		index = int(w.curselection()[0])
 		value = w.get(index)
 		body = self.pop_obj.get_email_body(index)
 		self.text.insert(INSERT, body)

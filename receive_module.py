@@ -17,6 +17,7 @@ import email
 CRLF = '\r\n'
 TERMINATOR = CRLF + '.' + CRLF
 
+# Searches for a particular Tag in raw message
 def decode(input_str):
 	result = ''
 	search_result = re.search('=\?([^\?]*)\?([^\?]*)\?([^\?]*)\?=', input_str)
@@ -40,26 +41,31 @@ class pop3lib:
 
 	message_list = []
 
+	# sends a message m
 	def send_message(self,m):
 		logging.debug("\nC: "+m)
 		self.sock.send((m + '\r\n').encode('utf-8'))
-
+	
+	# sends a message m without logging
 	def send_password(self,m):
 		logging.debug("\nC: *********")
 		self.sock.send((m + '\r\n').encode('utf-8'))
 
+	# sends a message mes and receives a line from socket
 	def send_and_receiveline(self,mes):
 		logging.debug("\nC: "+mes)
 		self.sock.send((mes + '\r\n').encode('utf-8'))
 		line = self.sock.recv(2048)
 		logging.debug("\nS: " + line)
 		return line
-	
+
+	# Receives a line from socket
 	def receiveline(self):
 		line = self.sock.recv(2048)
 		logging.debug("\nS: " + line)
 		return line
-
+	
+	# Receives until terminated 
 	def receive_till_term(self, terminator):
 		response = self.sock.recv(2048)
 		while not response.endswith(TERMINATOR) and not response.endswith('.\r\n') and not response.endswith('.\r\n\r\n'):
@@ -68,12 +74,14 @@ class pop3lib:
 			print new_response
 		return response
 
+	# returns the total number of messages 
 	def get_message_count(self):
 		self.send_message("list")
 		mes = self.receive_till_term(TERMINATOR)
 		cnt = len(mes.split('\r\n')) - 3
 		return cnt
 
+	# Parses the response to get Subject, Sender address and Date from raw message
 	def get_result(self,data):
 		addr = 'No \'From: ...\''
 		subj = 'No \'Subject: ...\''
@@ -124,6 +132,7 @@ class pop3lib:
 		else:
 			self.password_valid = False
 
+	# returns back list of senders, subjects and date within the index LOWER_INDEX and UPPER_INDEX
 	def get_message_list(self, LOWER_INDEX, UPPER_INDEX):
 		addr_list = []
 		subj_list = []
@@ -149,6 +158,7 @@ class pop3lib:
 			logging.info(('\nS: {0}\n{1}\n{2}\n'.format(addr, subj, date)))
 		return addr_list, subj_list, date_list
 
+	# returns the message body from message at position index
 	def get_email_body(self, index):
 		index = self.message_count - index
 		self.send_message("RETR "+str(index))
