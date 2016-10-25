@@ -1,5 +1,5 @@
 # PyMail
-#### A simple Python GUI based SMTP and POP3 Client 
+#### A simple Python GUI based SMTP and POP3 Client
 ----------------------------------------------------------
 
 ## Setup  
@@ -8,7 +8,7 @@
 git clone https://github.com/anshulshah96/PyMail.git
 ```
 - Create a Local File in the folder with name conf.py and add:
-```python 
+```python
 USERNAME = "your username"
 PASSWORD = "your password"
 HOST_ADDR = "192.168.180.11" # IITR SMTP AND POP3 ADDRESSS
@@ -17,7 +17,7 @@ SMTP_PORT = 587
 ```
 - Start the GUI User Agent:
 ```shell
-python guitest.py
+python main.py
 ```
 
 ## License

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1302</width>
+    <width>1263</width>
     <height>531</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="head_label_1">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>250</y>
+      <x>530</x>
+      <y>290</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -37,8 +37,8 @@
    <widget class="QLabel" name="pop_host">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>290</y>
+      <x>470</x>
+      <y>330</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QLineEdit" name="pop_host_value">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>290</y>
+      <x>570</x>
+      <y>330</y>
       <width>201</width>
       <height>32</height>
      </rect>
@@ -66,8 +66,8 @@
    <widget class="QLabel" name="pop_port">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>330</y>
+      <x>470</x>
+      <y>370</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -85,18 +85,18 @@
    <widget class="QLineEdit" name="pass_text">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>250</y>
+      <x>560</x>
+      <y>120</y>
       <width>201</width>
-      <height>32</height>
+      <height>41</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="smtp_host">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>130</y>
+      <x>50</x>
+      <y>330</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -114,8 +114,8 @@
    <widget class="QLineEdit" name="smtp_host_value">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>130</y>
+      <x>150</x>
+      <y>330</y>
       <width>201</width>
       <height>32</height>
      </rect>
@@ -124,8 +124,8 @@
    <widget class="QLabel" name="head_label_2">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>90</y>
+      <x>120</x>
+      <y>290</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -144,8 +144,8 @@
    <widget class="QLabel" name="login_status">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>150</y>
+      <x>520</x>
+      <y>60</y>
       <width>241</width>
       <height>17</height>
      </rect>
@@ -153,12 +153,15 @@
     <property name="text">
      <string/>
     </property>
+    <property name="openExternalLinks">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="smtp_port">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>170</y>
+      <x>50</x>
+      <y>370</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -176,18 +179,18 @@
    <widget class="QLineEdit" name="user_text">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>200</y>
+      <x>560</x>
+      <y>71</y>
       <width>201</width>
-      <height>32</height>
+      <height>41</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="app_title">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>80</y>
+      <x>580</x>
+      <y>0</y>
       <width>151</width>
       <height>61</height>
      </rect>
@@ -197,6 +200,8 @@
       <pointsize>28</pointsize>
       <weight>75</weight>
       <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
      </font>
     </property>
     <property name="text">
@@ -206,8 +211,8 @@
    <widget class="QLabel" name="user_label">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>200</y>
+      <x>450</x>
+      <y>80</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -225,8 +230,8 @@
    <widget class="QLineEdit" name="smtp_port_value">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>170</y>
+      <x>150</x>
+      <y>370</y>
       <width>201</width>
       <height>32</height>
      </rect>
@@ -235,8 +240,8 @@
    <widget class="QLineEdit" name="pop_port_value">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>330</y>
+      <x>570</x>
+      <y>370</y>
       <width>201</width>
       <height>32</height>
      </rect>
@@ -245,8 +250,8 @@
    <widget class="QLabel" name="pass_label">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>250</y>
+      <x>450</x>
+      <y>130</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -264,14 +269,292 @@
    <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>310</y>
+      <x>600</x>
+      <y>180</y>
       <width>92</width>
       <height>33</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
      <string>LOGIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>330</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114013</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>330</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Anshul Shah</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>390</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114028</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>390</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Harkirat Singh</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>430</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114030</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>430</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ketan Mittal</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>350</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nikhil Sheoran</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>350</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114031</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>410</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Prashant Kumar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>410</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114037</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>370</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pratyush Rajput</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>370</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Andale Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>14114039</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="head_label_3">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>290</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Created By</string>
     </property>
    </widget>
   </widget>
@@ -280,7 +563,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1302</width>
+     <width>1263</width>
      <height>30</height>
     </rect>
    </property>

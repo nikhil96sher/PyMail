@@ -6,17 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1305</width>
-    <height>536</height>
+    <width>1262</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="app_title_2">
+  <widget class="QLabel" name="user_email">
    <property name="geometry">
     <rect>
-     <x>1060</x>
+     <x>1030</x>
      <y>20</y>
      <width>221</width>
      <height>31</height>
@@ -36,7 +36,7 @@
   <widget class="QPushButton" name="retrieve_button">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>50</y>
      <width>103</width>
      <height>34</height>
@@ -49,7 +49,7 @@
   <widget class="QPushButton" name="compose_button">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>50</y>
      <width>103</width>
      <height>34</height>
@@ -62,10 +62,10 @@
   <widget class="QTableWidget" name="received_email">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>851</width>
-     <height>421</height>
+     <x>10</x>
+     <y>90</y>
+     <width>821</width>
+     <height>431</height>
     </rect>
    </property>
    <column>
@@ -87,10 +87,10 @@
   <widget class="QTextBrowser" name="email_body">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>110</y>
+     <x>840</x>
+     <y>120</y>
      <width>411</width>
-     <height>411</height>
+     <height>401</height>
     </rect>
    </property>
    <property name="html">
@@ -104,11 +104,18 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1060</x>
+     <x>930</x>
      <y>80</y>
-     <width>71</width>
-     <height>18</height>
+     <width>91</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Message</string>
@@ -117,7 +124,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="app_title">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
      <width>101</width>
      <height>41</height>
@@ -132,6 +139,39 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>PyMail</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="showing_label">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>60</y>
+     <width>271</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Showing 10 of 10,200 emails</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_browser">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>80</y>
+     <width>151</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open in Browser</string>
    </property>
   </widget>
  </widget>

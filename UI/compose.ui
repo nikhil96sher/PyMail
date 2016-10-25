@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1302</width>
+    <width>1260</width>
     <height>529</height>
    </rect>
   </property>
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>40</y>
+     <x>510</x>
+     <y>30</y>
      <width>201</width>
      <height>41</height>
     </rect>
@@ -34,8 +34,8 @@
   <widget class="QPlainTextEdit" name="body">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>220</y>
+     <x>210</x>
+     <y>210</y>
      <width>831</width>
      <height>261</height>
     </rect>
@@ -44,11 +44,17 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>100</y>
+     <x>210</x>
+     <y>90</y>
      <width>71</width>
      <height>18</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Sender</string>
@@ -57,11 +63,17 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>140</y>
-     <width>71</width>
+     <x>210</x>
+     <y>130</y>
+     <width>81</width>
      <height>18</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Receiver</string>
@@ -70,11 +82,17 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>180</y>
+     <x>210</x>
+     <y>170</y>
      <width>71</width>
      <height>18</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Subject</string>
@@ -83,8 +101,8 @@
   <widget class="QPushButton" name="send_email">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>490</y>
+     <x>420</x>
+     <y>480</y>
      <width>103</width>
      <height>34</height>
     </rect>
@@ -96,8 +114,8 @@
   <widget class="QPushButton" name="discard_email">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>490</y>
+     <x>690</x>
+     <y>480</y>
      <width>103</width>
      <height>34</height>
     </rect>
@@ -109,7 +127,7 @@
   <widget class="QLabel" name="app_title">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
      <width>101</width>
      <height>41</height>
@@ -129,8 +147,8 @@
   <widget class="QLineEdit" name="sender">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>90</y>
+     <x>300</x>
+     <y>80</y>
      <width>741</width>
      <height>32</height>
     </rect>
@@ -139,8 +157,8 @@
   <widget class="QLineEdit" name="receiver">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>130</y>
+     <x>300</x>
+     <y>120</y>
      <width>741</width>
      <height>32</height>
     </rect>
@@ -149,11 +167,31 @@
   <widget class="QLineEdit" name="subject">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>170</y>
+     <x>300</x>
+     <y>160</y>
      <width>741</width>
      <height>32</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="user_email">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>20</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>nik17.ucs2014@iitr.ac.in</string>
    </property>
   </widget>
  </widget>
