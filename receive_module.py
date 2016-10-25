@@ -84,7 +84,10 @@ class pop3lib:
 		subj_data = re.search('^Subject:.*(.*\r?\n\s.*)*', data, re.M | re.I)
 		if subj_data is not None:
 			subj = decode(subj_data.group(0))
-		return [subj, addr]
+		date_data = re.search('^Date:.*(.*\r?\n\s.*)*', data, re.M | re.I)
+		if date_data is not None:
+			date = decode(date_data.group(0))
+		return [subj, addr, date]
 
 	def __init__(self, host_name, host_port, user_id, passw, log_level=logging.DEBUG):
 		logging.basicConfig(format='%(levelname)s:%(message)s', level=log_level)
@@ -124,26 +127,30 @@ class pop3lib:
 	def get_message_list(self, LOWER_INDEX, UPPER_INDEX):
 		addr_list = []
 		subj_list = []
-		if(self.get_message_count() < LOWER_INDEX):
-			return addr_list, subj_list
+		date_list = []
+		self.message_count = self.get_message_count()
 
-		self.message_count = min(self.get_message_count(),UPPER_INDEX)
+		if(self.message_count - UPPER_INDEX <= 0):
+			UPPER_INDEX = self.message_count - 1
 
-		for message_number in range(LOWER_INDEX,self.message_count + 1):
+		if(self.message_count - LOWER_INDEX <= 0):
+			return addr_list, subj_list, date_list
+		for message_number in range(self.message_count - LOWER_INDEX,self.message_count - UPPER_INDEX - 1,-1):
 			self.send_message('top {0} 0'.format(message_number))
 			# response = self.receive_till_term(TERMINATOR)
 			response = self.sock.recv(2048)
 			while not response.endswith(b'\r\n.\r\n'):
 				response += self.sock.recv(2048)
 
-			subj, addr = self.get_result(response)
+			subj, addr, date = self.get_result(response)
 			subj_list.append(subj)
 			addr_list.append(addr)
-			logging.info(('\nS: {0}\n{1}\n'.format(addr, subj)))
-		return addr_list, subj_list
-
+			date_list.append(date)
+			logging.info(('\nS: {0}\n{1}\n{2}\n'.format(addr, subj, date)))
+		return addr_list, subj_list, date_list
 
 	def get_email_body(self, index):
+		index = self.message_count - index
 		self.send_message("RETR "+str(index))
 		response = self.receive_till_term(TERMINATOR)
 		response = '\n'.join(response.split('\n')[1:])
@@ -164,6 +171,6 @@ if __name__ == "__main__":
 	reload(sys)  
 	sys.setdefaultencoding('utf8')
 	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
-	print pop_obj.get_message_list(5,12)
+	print pop_obj.get_message_list(1,1)
 	# print pop_obj.get_email_body(14)
 	# print "DONE"
