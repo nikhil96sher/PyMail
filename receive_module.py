@@ -121,15 +121,17 @@ class pop3lib:
 		else:
 			self.password_valid = False
 
-	def get_message_list(self):
-		self.message_count = min(self.get_message_count(),MESSAGE_LIMIT)
+	def get_message_list(self, LOWER_INDEX, UPPER_INDEX):
 		addr_list = []
 		subj_list = []
+		if(self.get_message_count() < LOWER_INDEX):
+			return addr_list, subj_list
 
-		for message_number in range(1,min(self.message_count,MESSAGE_LIMIT) + 1):
+		self.message_count = min(self.get_message_count(),UPPER_INDEX)
+
+		for message_number in range(LOWER_INDEX,self.message_count + 1):
 			self.send_message('top {0} 0'.format(message_number))
 			# response = self.receive_till_term(TERMINATOR)
-
 			response = self.sock.recv(2048)
 			while not response.endswith(b'\r\n.\r\n'):
 				response += self.sock.recv(2048)
@@ -162,6 +164,6 @@ if __name__ == "__main__":
 	reload(sys)  
 	sys.setdefaultencoding('utf8')
 	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
-	# print pop_obj.get_message_list()
+	print pop_obj.get_message_list(5,12)
 	# print pop_obj.get_email_body(14)
 	# print "DONE"
