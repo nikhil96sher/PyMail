@@ -195,7 +195,7 @@ if __name__ == "__main__":
 	print msg.as_string()
 	send_raw_email(HOST_ADDR,SMTP_PORT,USERNAME,PASSWORD,"",fromaddr,toaddr,msg.as_string()[:-1],logging.DEBUG)
 
-	# smtp = smtplib.SMTP(HOST_ADDR, SMTP_PORT)
-	# smtp.login(USERNAME,PASSWORD)
-	# smtp.sendmail(fromaddr, toaddr, msg.as_string())
-	# smtp.close()
+	smtp = smtplib.SMTP(HOST_ADDR, SMTP_PORT)
+	smtp.login(USERNAME,PASSWORD)
+	smtp.sendmail(fromaddr, toaddr, msg.as_string())
+	smtp.close()

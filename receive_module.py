@@ -182,6 +182,6 @@ if __name__ == "__main__":
 	reload(sys)
 	sys.setdefaultencoding('utf8')
 	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
-	# print pop_obj.get_message_list(1,1)
-	# print pop_obj.get_email_body(14)
-	# print "DONE"
+	print pop_obj.get_message_list(1,1)
+	print pop_obj.get_email_body(14)
+	print "DONE"
