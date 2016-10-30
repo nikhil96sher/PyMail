@@ -1,6 +1,6 @@
 # PyMail
 #### A simple Python GUI based SMTP and POP3 Client
-----------------------------------------------------------
+-----------------------------------------------------------
 
 ## Setup  
 - Clone the repo:
@@ -20,6 +20,8 @@ MESSAGE_LIMIT = 20
 ```shell
 python main.py
 ```
+
+- In order to modify GUI using Qt-Designer, modify the .ui files in components and execute ```./run.sh``` to generate the corresponding .py files
 
 ## License
 [MIT License](http://anshul.mit-license.org/)

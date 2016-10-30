@@ -8,12 +8,6 @@ from conf import *
 import logging
 import email
 
-# from email.parser import Parser
-
-# in conf.py put
-# username = ---
-# password = ---
-
 CRLF = '\r\n'
 TERMINATOR = CRLF + '.' + CRLF
 
@@ -48,7 +42,6 @@ class pop3lib:
 
 	# sends a message m without logging
 	def send_password(self,m):
-		logging.debug("\nC: *********")
 		self.sock.send((m + '\r\n').encode('utf-8'))
 
 	# sends a message mes and receives a line from socket
@@ -105,7 +98,7 @@ class pop3lib:
 			sock.connect((host_name, host_port))
 			self.connection = True
 		except Exception as e:
-			print('can\'t connect to {0} on {1} port \r\n{3}'.format(host, port, e.__repr__()))
+			print('can\'t connect to {0} on {1} port \r\n{2}'.format(host, port, e.__repr__()))
 			self.connection = False
 			return
 
@@ -182,6 +175,3 @@ if __name__ == "__main__":
 	reload(sys)
 	sys.setdefaultencoding('utf8')
 	pop_obj = pop3lib(HOST_ADDR,POP3_PORT,USERNAME,PASSWORD)
-	# print pop_obj.get_message_list(1,1)
-	# print pop_obj.get_email_body(14)
-	# print "DONE"
