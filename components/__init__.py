@@ -1,3 +1,3 @@
 import compose
-import login_dash
+import dashboard
 import mainwindow
