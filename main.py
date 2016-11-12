@@ -2,9 +2,8 @@ from PySide import QtCore, QtGui
 from receive_module import *
 import sender_module
 import sys,os
-from components import mainwindow,compose,login_dash
+from components import mainwindow,compose,dashboard
 import conf
-from PyQt4 import QtCore as QtCore2
 
 class ControlMainWindow(QtGui.QMainWindow):	#Initialize New Window
 
@@ -80,7 +79,7 @@ class LoginDashboard(QtGui.QWidget):
 	#Initialization function that defines the control to listen to
 	def __init__(self, parent=None):
 		super(LoginDashboard, self).__init__(parent)
-		self.ui = login_dash.Ui_Form()
+		self.ui = dashboard.Ui_Form()
 		self.ui.setupUi(self)
 		self.ui.received_email.cellClicked.connect(self.slotItemClicked)
 		self.ui.compose_button.clicked.connect(self.compose)
@@ -167,7 +166,7 @@ class ComposeDashboard(QtGui.QWidget):
 		self.ui.subject.setText("")
 		self.ui.body.clear()
 
-	#Discards the data in the body, sender, receiver and subject fields and return to login_dash page
+	#Discards the data in the body, sender, receiver and subject fields and return to dashboard page
 	def discard(self):
 		self.parent().setCurrentIndex(0)
 		self.ui.sender.setText(self.pop_obj.username)
